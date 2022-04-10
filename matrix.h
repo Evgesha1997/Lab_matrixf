@@ -1,14 +1,16 @@
 #ifndef _MATRIX_
 #define _MATRIX_
+#define SIZE 100
 
-void readf_matrix(int &size, double matrix[SIZE][SIZE]);
+// Считывает матрицу из файла
+void readf_matrix(int& size, double matrix[SIZE][SIZE]);
 
 //умножает матрицу на число (не меняет исходную матрицу)
 void multiplication_by_number(const int size, const double factor, double matrix[SIZE][SIZE], double result_matrix[SIZE][SIZE]);
 
 void copy_matrix(const int size, double matrix[SIZE][SIZE], double result_matrix[SIZE][SIZE]);
 
-//функция по поиску матрицы произведения двух матриц
+//универсальная функция по поиску матрицы произведения двух матриц
 void multiplication_of_two_matrix(const int size, double matrix_1[SIZE][SIZE], double matrix_2[SIZE][SIZE], double result_matrix[SIZE][SIZE]);
 
 //вычисление суммы двух матриц
@@ -33,7 +35,7 @@ void create_L_matrix(const double numbers[]);
 void create_R_matrix(const double numbers[]);
 
 //проверяет истинность указанного равенства
-bool eqils_check(const double numbers[], double (left_matrix)[3][3], double (right_matrix)[3][3]);
+bool eqils_check(const double numbers[], double(left_matrix)[SIZE][SIZE], double(right_matrix)[SIZE][SIZE]);
 
 //решает матричное уравнение вида XAB - XC = 2C
 void solve_matrix_equation(const int size_A, const int size_B, const int size_C, double matrix_A[SIZE][SIZE], double matrix_B[SIZE][SIZE], double matrix_C[SIZE][SIZE]);
